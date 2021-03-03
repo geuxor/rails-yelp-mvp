@@ -1,0 +1,12 @@
+
+<div class="container col-12">
+  <h1>My nice Restaurants Review</h1>
+  <p><strong>This line rendered as bold text.</strong></p>
+  
+	<% @reviews.each do |res| %>
+    <div class="d-flex p-2">
+      <%= res.rating %>
+      <%= res.content %>
+    </div>
+  <% end %>
+</div>

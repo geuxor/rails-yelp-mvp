@@ -1,0 +1,24 @@
+<div class="navbar p-2">
+  <%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-primary shadow" %>
+</div>
+
+<div class="container col-12">
+  <h1>My nice Restaurants</h1>
+  <p><strong>This line rendered as bold text.</strong></p>
+  
+	<% @restaurants.each do |res| %>
+    <div class="d-flex p-2">
+      <%= link_to restaurant_path(res.id) do %>
+      <%= res.name %>
+      <%= res.address %>
+      <%= res.phone_number %>
+      <%= res.category %>
+      <% end %>
+      
+      <%= link_to reviews_path(res), data: { confirm: "You want to check reviews now?" } do %>
+        <i class="fas fa-meh-rolling-eyes"></i>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>
